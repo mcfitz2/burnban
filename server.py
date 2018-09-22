@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, abort
 import requests, json
 import datetime, os
 import xml.etree.ElementTree
@@ -74,7 +74,10 @@ def get_county(lat, lng):
 @app.route('/county/<county>')
 def by_county(county):
 	update_bans()
-	return json.dumps({"burn_ban":data["counties"][county.upper()]["burn_ban"], "updated_date":data["updated_date"].isoformat()}, cls=DateTimeEncoder)
+	if county in data["counties"]:
+		return json.dumps({"burn_ban":data["counties"][county.upper()]["burn_ban"], "updated_date":data["updated_date"].isoformat()}, cls=DateTimeEncoder)
+	else:
+		return abort(404)
 @app.route('/location/<lat>/<lng>')
 def by_location(lat, lng):
 	update_bans()
