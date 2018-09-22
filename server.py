@@ -87,4 +87,4 @@ def by_place(place):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=os.environ['HOST'], host="0.0.0.0")
+    app.run(debug=True, port=os.environ['PORT'], host="0.0.0.0")
