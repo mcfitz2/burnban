@@ -1,6 +1,6 @@
 from flask import Flask, request
 import requests, json
-import datetime
+import datetime, os
 import xml.etree.ElementTree
 from dateutil.parser import parse
 from json import JSONDecoder
