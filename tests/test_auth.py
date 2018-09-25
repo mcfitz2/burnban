@@ -1,4 +1,5 @@
-import requests, json, sys
+import requests
+import sys
 
 
 r = requests.post("http://localhost:2222/auth", json={"api_key":sys.argv[1], "api_secret":sys.argv[2]})
