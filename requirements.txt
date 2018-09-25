@@ -2,3 +2,5 @@ flask
 requests
 peewee
 flask_limiter
+psycopg2-binary
+Flask-JWT
