@@ -1,3 +1,4 @@
 flask
 requests
 peewee
+flask_limiter
